@@ -16,7 +16,7 @@
 namespace GE {
 //    class Command;
     class GameEngine{
-        std::vector<Command*> coms;
+        std::vector<Command> coms;
     public:
         GameEngine();
         void addCommand(std::string, ActionCallback, std::string="", std::string="");
@@ -25,6 +25,9 @@ namespace GE {
         void addCommand(std::vector<std::string>, ActionCallbackCtx, std::string="", std::string="");
         void runCommand(std::string, std::string);
         bool parseCommand(std::string input);
+
+        std::vector<Command>& getCommands() { return coms; }
+
         Command* getCommandByName(std::string);
     };
 }

@@ -17,7 +17,7 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     GE::GameEngine a;
 
-    a.addCommand("eat", [](string food, GE::Command* nothing){
+    a.addCommand("eat", [](string food, GE::Command& nothing){
         cout << "eating " << food << "\n";
     },
     "Eat some food to rise your health.",
@@ -25,16 +25,16 @@ int main(int argc, const char * argv[]) {
      "Eat one to regain HP, until it gets to it's maximum. Eating more wont"
      " have any effect, and wont waste the item.");
 
-    a.addCommand("call", [&](string nothing, GE::Command*){
+    a.addCommand("call", [&](string nothing, GE::Command&){
         std::cout << "Calling!" << std::endl;
     },
     "Call. No one, just call.",
     "Literally useless.");
 
-    a.addCommand({"go", "g", "walk", "head"}, [](std::string direction, GE::Command* _){
+    a.addCommand({"go", "g", "walk", "head"}, [](std::string direction, GE::Command&){
         if (direction == "north" ||
             direction == "south" ||
-            direction == "east" ||
+            direction == "east"  ||
             direction == "west") {
             std::cout << "going " << direction << "\n";
         } else {
@@ -46,20 +46,20 @@ int main(int argc, const char * argv[]) {
 
     a.addCommand(
     {"help", "h", "info"},
-    [&](string args, vector<GE::Command*> context){
+    [&](string args, vector<GE::Command>& context){
         if (args.size() <= 0){
             cout << "Commands Available:" << endl;
-            for (auto* com : context){
-                string comInfo = com->getInfo();
+            for (auto com : context){
+                string comInfo = com.getInfo();
                 cout <<
-                GE::padLeft(com->joinNames(), 25) <<
+                GE::padLeft(com.joinNames(), 25) <<
                 " = " << comInfo <<
                 endl << endl;
             }
         } else {
             auto chosen = a.getCommandByName(args);
             
-            if (chosen != NULL){
+            if (chosen != nullptr){
                 cout << "Details of " << chosen->getMainName() << endl << endl;
                 cout << "\t" << chosen->getDetails() << endl;
             } else {
@@ -71,7 +71,7 @@ int main(int argc, const char * argv[]) {
     "Displays a list of the commands in the game. Use `help [command]` "
      "to get the details of a specific command.");
 
-    a.addCommand(vector<string>{"exit", "q", "quit"}, [](string args, vector<GE::Command*> context){
+    a.addCommand(vector<string>{"exit", "q", "quit"}, [](string args, vector<GE::Command>& context){
         cout << "Goodbye!" << endl;
         exit(0);
     },

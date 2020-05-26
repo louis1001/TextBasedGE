@@ -19,10 +19,10 @@ GE::Command::Command(std::vector<std::string> names_, ActionCallbackCtx callback
 }
 
 void GE::Command::run(std::string arguments){
-    callback(arguments, this);
+    callback(arguments, *this);
 }
 
-void GE::Command::runCtx(std::string arguments, std::vector<Command*> context){
+void GE::Command::runCtx(std::string arguments, std::vector<Command>& context){
     callbackCtx(arguments, context);
 }
 

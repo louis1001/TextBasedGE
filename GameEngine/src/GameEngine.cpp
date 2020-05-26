@@ -17,29 +17,29 @@ void sayHi(std::string message){
 GE::GameEngine::GameEngine(){}
 
 void GE::GameEngine::addCommand(std::string name, ActionCallback callback, std::string info, std::string desc){
-    Command* newCom = new Command({name}, callback, info, desc);
+    Command newCom({name}, callback, info, desc);
     coms.push_back(newCom);
 }
 
 void GE::GameEngine::addCommand(std::vector<std::string> names, ActionCallback callback, std::string info, std::string desc){
-    Command* newCom = new Command(names, callback, info, desc);
+    Command newCom(names, callback, info, desc);
     coms.push_back(newCom);
 }
 
 void GE::GameEngine::addCommand(std::string name, ActionCallbackCtx callback, std::string info, std::string desc){
-    Command* newCom = new Command({name}, callback, info, desc);
+    Command newCom({name}, callback, info, desc);
     coms.push_back(newCom);
 }
 
 void GE::GameEngine::addCommand(std::vector<std::string> names, ActionCallbackCtx callback, std::string info, std::string desc){
-    Command* newCom = new Command(names, callback, info, desc);
+    Command newCom(names, callback, info, desc);
     coms.push_back(newCom);
 }
 
 void GE::GameEngine::runCommand(std::string name, std::string arguments){
     Command* chosenCommand = getCommandByName(name);
 
-    if (chosenCommand != NULL){
+    if (chosenCommand != nullptr){
         if (chosenCommand->hasCtx()){
             chosenCommand->runCtx(arguments, coms);
         } else {
@@ -58,10 +58,10 @@ bool GE::GameEngine::parseCommand(std::string str){
 }
 
 GE::Command* GE::GameEngine::getCommandByName(std::string name){
-    Command* chosenCommand = NULL;
-    for (Command* a : coms){
-        if (a->hasName(name)){
-            chosenCommand = a;
+    Command* chosenCommand = nullptr;
+    for (Command& a : coms){
+        if (a.hasName(name)){
+            chosenCommand = &a;
             break;
         }
     }

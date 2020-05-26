@@ -16,8 +16,8 @@
 namespace GE {
     class Command;
 
-    typedef std::function<void(std::string, Command*)> ActionCallback;
-    typedef std::function<void(std::string, std::vector<Command*>)> ActionCallbackCtx;
+    typedef std::function<void(std::string, Command&)> ActionCallback;
+    typedef std::function<void(std::string, std::vector<Command>&)> ActionCallbackCtx;
     class Command {
         std::vector<std::string> names;
         ActionCallback callback;
@@ -42,7 +42,7 @@ namespace GE {
         );
 
         void run(std::string);
-        void runCtx(std::string, std::vector<Command*>);
+        void runCtx(std::string, std::vector<Command>&);
         std::string joinNames();
         bool hasName(std::string);
         bool hasCtx();
