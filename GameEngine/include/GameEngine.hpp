@@ -8,21 +8,24 @@
 
 #ifndef GameEngine_hpp
 #define GameEngine_hpp
+#include "Command.hpp"
 #include <string>
 #include <vector>
 #include <map>
 
 namespace GE {
-    typedef void (*ActionCallback)(std::string);
+//    class Command;
     class GameEngine{
-    std::map<std::string, ActionCallback> commands;
+        std::vector<Command*> coms;
     public:
         GameEngine();
-        GameEngine(std::map<std::string, ActionCallback>);
-        GameEngine(std::vector<std::string>, std::vector<ActionCallback>);
-        void addCommand(std::string, ActionCallback);
+        void addCommand(std::string, ActionCallback, std::string="", std::string="");
+        void addCommand(std::string, ActionCallbackCtx, std::string="", std::string="");
+        void addCommand(std::vector<std::string>, ActionCallback, std::string="", std::string="");
+        void addCommand(std::vector<std::string>, ActionCallbackCtx, std::string="", std::string="");
         void runCommand(std::string, std::string);
         bool parseCommand(std::string input);
+        Command* getCommandByName(std::string);
     };
 }
 

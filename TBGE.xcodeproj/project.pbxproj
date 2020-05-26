@@ -13,6 +13,8 @@
 		C4B4828522F0B6C900B671C0 /* GameEngine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C4B4828322F0B6C900B671C0 /* GameEngine.hpp */; };
 		C4B4828F22F0B70500B671C0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4B4828E22F0B70500B671C0 /* main.cpp */; };
 		C4B4829322F0B74800B671C0 /* libGameEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B4827D22F0B6AF00B671C0 /* libGameEngine.a */; };
+		C4CFA595236739810033A57A /* Command.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C4CFA594236739810033A57A /* Command.hpp */; };
+		C4CFA597236742CF0033A57A /* Command.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4CFA596236742CF0033A57A /* Command.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +37,8 @@
 		C4B4828322F0B6C900B671C0 /* GameEngine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameEngine.hpp; sourceTree = "<group>"; };
 		C4B4828C22F0B70500B671C0 /* TestGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B4828E22F0B70500B671C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C4CFA594236739810033A57A /* Command.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Command.hpp; sourceTree = "<group>"; };
+		C4CFA596236742CF0033A57A /* Command.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Command.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			children = (
 				C47BBFD222F107E80046A142 /* utils.cpp */,
 				C4B4828222F0B6C900B671C0 /* GameEngine.cpp */,
+				C4CFA596236742CF0033A57A /* Command.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 			children = (
 				C4B4828322F0B6C900B671C0 /* GameEngine.hpp */,
 				C47BBFD322F107E90046A142 /* utils.hpp */,
+				C4CFA594236739810033A57A /* Command.hpp */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C47BBFD522F107E90046A142 /* utils.hpp in Headers */,
+				C4CFA595236739810033A57A /* Command.hpp in Headers */,
 				C4B4828522F0B6C900B671C0 /* GameEngine.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B4828422F0B6C900B671C0 /* GameEngine.cpp in Sources */,
+				C4CFA597236742CF0033A57A /* Command.cpp in Sources */,
 				C47BBFD422F107E90046A142 /* utils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
