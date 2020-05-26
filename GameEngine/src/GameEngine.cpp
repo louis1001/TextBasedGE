@@ -24,23 +24,11 @@ void GE::GameEngine::addCommand(std::vector<std::string> names, ActionCallback c
     coms.emplace_back(names, callback, info, desc);
 }
 
-void GE::GameEngine::addCommand(std::string name, ActionCallbackCtx callback, std::string info, std::string desc){
-    coms.push_back({{name}, callback, info, desc});
-}
-
-void GE::GameEngine::addCommand(std::vector<std::string> names, ActionCallbackCtx callback, std::string info, std::string desc){
-    coms.emplace_back(names, callback, info, desc);
-}
-
 void GE::GameEngine::runCommand(std::string name, std::string arguments){
     Command* chosenCommand = getCommandByName(name);
 
     if (chosenCommand != nullptr){
-        if (chosenCommand->hasCtx()){
-            chosenCommand->runCtx(arguments, coms);
-        } else {
-            chosenCommand->run(arguments);
-        }
+        chosenCommand->run(arguments);
     } else {
         std::cerr << "Unkown command '" << name << "'." << std::endl;
     }

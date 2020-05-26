@@ -20,13 +20,11 @@ namespace GE {
     public:
         GameEngine();
         void addCommand(std::string, ActionCallback, std::string="", std::string="");
-        void addCommand(std::string, ActionCallbackCtx, std::string="", std::string="");
         void addCommand(std::vector<std::string>, ActionCallback, std::string="", std::string="");
-        void addCommand(std::vector<std::string>, ActionCallbackCtx, std::string="", std::string="");
         void runCommand(std::string, std::string);
         bool parseCommand(std::string input);
 
-        std::vector<Command>& getCommands() { return coms; }
+        std::vector<Command>& commands() { return coms; }
 
         Command* getCommandByName(std::string);
     };

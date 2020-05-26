@@ -46,11 +46,11 @@ int main(int argc, const char * argv[]) {
 
     a.addCommand(
     {"help", "h", "info"},
-    [&](string args, vector<GE::Command>& context){
+    [&](string args, GE::Command){
         if (args.size() <= 0){
             cout << "Commands Available:" << endl;
-            for (auto com : context){
-                string comInfo = com.getInfo();
+            for (auto com : a.commands()){
+                string comInfo = com.info();
                 cout <<
                 GE::padLeft(com.joinNames(), 25) <<
                 " = " << comInfo <<
@@ -71,7 +71,7 @@ int main(int argc, const char * argv[]) {
     "Displays a list of the commands in the game. Use `help [command]` "
      "to get the details of a specific command.");
 
-    a.addCommand(vector<string>{"exit", "q", "quit"}, [](string args, vector<GE::Command>& context){
+    a.addCommand(vector<string>{"exit", "q", "quit"}, [](string args, auto){
         cout << "Goodbye!" << endl;
         exit(0);
     },

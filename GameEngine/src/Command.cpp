@@ -12,22 +12,10 @@ GE::Command::Command(std::vector<std::string> names_, ActionCallback callback_, 
     names(names_),
     callback(callback_),
     help(info),
-    description(desc),
-    withCtx(false) {}
-
-GE::Command::Command(std::vector<std::string> names_, ActionCallbackCtx callbackCtx_, std::string info="", std::string desc="") :
-    names(names_),
-    callbackCtx(callbackCtx_),
-    help(info),
-    description(desc),
-    withCtx(true) {}
+    description(desc) {}
 
 void GE::Command::run(std::string arguments){
     callback(arguments, *this);
-}
-
-void GE::Command::runCtx(std::string arguments, std::vector<Command>& context){
-    callbackCtx(arguments, context);
 }
 
 std::string GE::Command::joinNames(){
@@ -54,11 +42,7 @@ bool GE::Command::hasName(std::string name){
     return existsName;
 }
 
-bool GE::Command::hasCtx(){
-    return withCtx;
-}
-
-std::string GE::Command::getInfo(){
+std::string GE::Command::info(){
     if (this->help.size() > 0){
         return this->help;
     } else {
