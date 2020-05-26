@@ -27,6 +27,16 @@ std::vector<std::string> GE::splitString(std::string str){
             lastToken += c;
         }
     }
+    result.push_back(lastToken);
 
+    return result;
+}
+
+std::string GE::padLeft(std::string og, int sz){
+    std::string result = og;
+    
+    if (og.size() > 0 && og.size() < sz){
+        result.insert(result.begin(), sz - result.size(), ' ');
+    }
     return result;
 }

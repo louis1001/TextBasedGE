@@ -13,6 +13,7 @@
 
 namespace GE {
     std::vector<std::string> splitString(std::string str);
+    std::string padLeft(std::string, int);
 }
 
 #endif /* utils_hpp */
