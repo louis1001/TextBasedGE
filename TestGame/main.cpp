@@ -60,8 +60,8 @@ int main(int argc, const char * argv[]) {
             auto chosen = a.getCommandByName(args);
             
             if (chosen != nullptr){
-                cout << "Details of " << chosen->getMainName() << endl << endl;
-                cout << "\t" << chosen->getDetails() << endl;
+                cout << "Details of " << chosen->mainName() << endl << endl;
+                cout << "\t" << chosen->details() << endl;
             } else {
                 cout << "Unknown command '" << args << "'." << endl;
             }

@@ -34,9 +34,9 @@ namespace GE {
         void run(std::string);
         std::string joinNames();
         bool hasName(std::string);
-        std::string getInfo();
-        std::string getDetails();
-        std::string getMainName();
+        std::string info();
+        std::string details();
+        std::string mainName();
     };
 }
 

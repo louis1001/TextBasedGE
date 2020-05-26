@@ -50,7 +50,7 @@ std::string GE::Command::info(){
     }
 }
 
-std::string GE::Command::getDetails(){
+std::string GE::Command::details(){
     if (this->description.size() > 0){
         return this->description;
     } else {
@@ -58,6 +58,6 @@ std::string GE::Command::getDetails(){
     }
 }
 
-std::string GE::Command::getMainName(){
+std::string GE::Command::mainName(){
     return names[0];
 }
