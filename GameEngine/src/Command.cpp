@@ -9,14 +9,18 @@
 #include <Command.hpp>
 
 GE::Command::Command(std::vector<std::string> names_, ActionCallback callback_, std::string info="", std::string desc="") :
-    names(names_), callback(callback_), help(info), description(desc){
-        withCtx = false;
-}
+    names(names_),
+    callback(callback_),
+    help(info),
+    description(desc),
+    withCtx(false) {}
 
 GE::Command::Command(std::vector<std::string> names_, ActionCallbackCtx callbackCtx_, std::string info="", std::string desc="") :
-    names(names_), callbackCtx(callbackCtx_), help(info), description(desc){
-        withCtx = true;
-}
+    names(names_),
+    callbackCtx(callbackCtx_),
+    help(info),
+    description(desc),
+    withCtx(true) {}
 
 void GE::Command::run(std::string arguments){
     callback(arguments, *this);

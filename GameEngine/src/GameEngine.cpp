@@ -17,23 +17,19 @@ void sayHi(std::string message){
 GE::GameEngine::GameEngine(){}
 
 void GE::GameEngine::addCommand(std::string name, ActionCallback callback, std::string info, std::string desc){
-    Command newCom({name}, callback, info, desc);
-    coms.push_back(newCom);
+    coms.push_back({{name}, callback, info, desc});
 }
 
 void GE::GameEngine::addCommand(std::vector<std::string> names, ActionCallback callback, std::string info, std::string desc){
-    Command newCom(names, callback, info, desc);
-    coms.push_back(newCom);
+    coms.emplace_back(names, callback, info, desc);
 }
 
 void GE::GameEngine::addCommand(std::string name, ActionCallbackCtx callback, std::string info, std::string desc){
-    Command newCom({name}, callback, info, desc);
-    coms.push_back(newCom);
+    coms.push_back({{name}, callback, info, desc});
 }
 
 void GE::GameEngine::addCommand(std::vector<std::string> names, ActionCallbackCtx callback, std::string info, std::string desc){
-    Command newCom(names, callback, info, desc);
-    coms.push_back(newCom);
+    coms.emplace_back(names, callback, info, desc);
 }
 
 void GE::GameEngine::runCommand(std::string name, std::string arguments){
