@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		C47BBFD422F107E90046A142 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C47BBFD222F107E80046A142 /* utils.cpp */; };
 		C47BBFD522F107E90046A142 /* utils.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C47BBFD322F107E90046A142 /* utils.hpp */; };
+		C488A217247DD97F000F79E4 /* Module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C488A215247DD97F000F79E4 /* Module.cpp */; };
+		C488A218247DD97F000F79E4 /* Module.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C488A216247DD97F000F79E4 /* Module.hpp */; };
+		C488A21B247DE759000F79E4 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C488A219247DE759000F79E4 /* Map.cpp */; };
+		C488A21C247DE759000F79E4 /* Map.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C488A21A247DE759000F79E4 /* Map.hpp */; };
 		C4B4828422F0B6C900B671C0 /* GameEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4B4828222F0B6C900B671C0 /* GameEngine.cpp */; };
 		C4B4828522F0B6C900B671C0 /* GameEngine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C4B4828322F0B6C900B671C0 /* GameEngine.hpp */; };
 		C4B4828F22F0B70500B671C0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4B4828E22F0B70500B671C0 /* main.cpp */; };
@@ -30,8 +34,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C418BF27247ECD47003D4782 /* game.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = game.json; sourceTree = "<group>"; };
 		C47BBFD222F107E80046A142 /* utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
 		C47BBFD322F107E90046A142 /* utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utils.hpp; sourceTree = "<group>"; };
+		C488A215247DD97F000F79E4 /* Module.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Module.cpp; sourceTree = "<group>"; };
+		C488A216247DD97F000F79E4 /* Module.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Module.hpp; sourceTree = "<group>"; };
+		C488A219247DE759000F79E4 /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
+		C488A21A247DE759000F79E4 /* Map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Map.hpp; sourceTree = "<group>"; };
 		C4B4827D22F0B6AF00B671C0 /* libGameEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGameEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B4828222F0B6C900B671C0 /* GameEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameEngine.cpp; sourceTree = "<group>"; };
 		C4B4828322F0B6C900B671C0 /* GameEngine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameEngine.hpp; sourceTree = "<group>"; };
@@ -60,6 +69,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C418BF26247ECD19003D4782 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				C418BF27247ECD47003D4782 /* game.json */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		C488A213247DD95A000F79E4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C488A216247DD97F000F79E4 /* Module.hpp */,
+				C488A21A247DE759000F79E4 /* Map.hpp */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C488A214247DD966000F79E4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C488A215247DD97F000F79E4 /* Module.cpp */,
+				C488A219247DE759000F79E4 /* Map.cpp */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		C4B4824522F09E5400B671C0 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +124,7 @@
 		C4B4828122F0B6BA00B671C0 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				C488A214247DD966000F79E4 /* Modules */,
 				C47BBFD222F107E80046A142 /* utils.cpp */,
 				C4B4828222F0B6C900B671C0 /* GameEngine.cpp */,
 				C4CFA596236742CF0033A57A /* Command.cpp */,
@@ -99,6 +135,7 @@
 		C4B4828622F0B6D700B671C0 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				C488A213247DD95A000F79E4 /* Modules */,
 				C4B4828322F0B6C900B671C0 /* GameEngine.hpp */,
 				C47BBFD322F107E90046A142 /* utils.hpp */,
 				C4CFA594236739810033A57A /* Command.hpp */,
@@ -109,6 +146,7 @@
 		C4B4828722F0B6E700B671C0 /* GameEngine */ = {
 			isa = PBXGroup;
 			children = (
+				C418BF26247ECD19003D4782 /* tests */,
 				C4B4828622F0B6D700B671C0 /* include */,
 				C4B4828122F0B6BA00B671C0 /* src */,
 			);
@@ -131,7 +169,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C47BBFD522F107E90046A142 /* utils.hpp in Headers */,
+				C488A21C247DE759000F79E4 /* Map.hpp in Headers */,
 				C4CFA595236739810033A57A /* Command.hpp in Headers */,
+				C488A218247DD97F000F79E4 /* Module.hpp in Headers */,
 				C4B4828522F0B6C900B671C0 /* GameEngine.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B4828422F0B6C900B671C0 /* GameEngine.cpp in Sources */,
+				C488A21B247DE759000F79E4 /* Map.cpp in Sources */,
+				C488A217247DD97F000F79E4 /* Module.cpp in Sources */,
 				C4CFA597236742CF0033A57A /* Command.cpp in Sources */,
 				C47BBFD422F107E90046A142 /* utils.cpp in Sources */,
 			);

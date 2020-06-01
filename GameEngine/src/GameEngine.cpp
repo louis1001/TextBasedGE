@@ -52,3 +52,15 @@ GE::Command* GE::GameEngine::getCommandByName(std::string name){
 
     return chosenCommand;
 }
+
+void GE::GameEngine::registerModule(GE::Module mod) {
+    modules.push_back(std::move(mod));
+}
+
+GE::Module* GE::GameEngine::getModule(std::string name) {
+    for (Module& m : modules) {
+        if (m.getName() == name) return &m;
+    }
+    
+    return nullptr;
+}
